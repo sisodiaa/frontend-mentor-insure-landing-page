@@ -21,16 +21,18 @@ import hamburger from "../assets/images/icon-hamburger.svg";
     </label>
   </div>
 
-  <ul>
-    <li>How we work</li>
-    <li>Blog</li>
-    <li>Account</li>
-    <li>View plans</li>
-  </ul>
+  <div>
+    <ul>
+      <li>How we work</li>
+      <li>Blog</li>
+      <li>Account</li>
+      <li>View plans</li>
+    </ul>
+  </div>
 </nav>
 
 <style>
-  nav > div {
+  div:first-child {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -52,12 +54,20 @@ import hamburger from "../assets/images/icon-hamburger.svg";
     display: block;
   }
 
-  div:has(input:checked) ~ ul {
+  div:first-child:has(input:checked) ~ div:last-child > ul {
     display: block;
   }
 
+  div:last-child {
+    position: relative;
+  }
+
   ul {
-    min-height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: 92vh;
     color: var(--color-light-gray);
     background-color: var(--color-darker-violet);
     font-family: var(--font-body);
@@ -66,7 +76,7 @@ import hamburger from "../assets/images/icon-hamburger.svg";
     background-image: url("../assets/images/bg-pattern-mobile-nav.svg");
     background-repeat: no-repeat;
     background-size: contain;
-    background-position: left 0% bottom 12%;
+    background-position: left 0% bottom 0%;
   }
 
   ul > li {
