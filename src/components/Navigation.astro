@@ -1,4 +1,85 @@
-How we work
-Blog
-Account
-View plans
+---
+import logo from "../assets/images/logo.svg";
+import close from "../assets/images/icon-close.svg";
+import hamburger from "../assets/images/icon-hamburger.svg";
+---
+
+<nav>
+  <div class="container">
+    <figure>
+      <img src={logo.src} alt="Brand Logo" />
+    </figure>
+
+    <input type="checkbox" id="menuToggle" />
+    <label for="menuToggle">
+      <figure>
+        <img src={close.src} alt="Close" />
+      </figure>
+      <figure>
+        <img src={hamburger.src} alt="Open" />
+      </figure>
+    </label>
+  </div>
+
+  <ul>
+    <li>How we work</li>
+    <li>Blog</li>
+    <li>Account</li>
+    <li>View plans</li>
+  </ul>
+</nav>
+
+<style>
+  nav > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+  }
+
+  input,
+  ul,
+  img[alt="Close"] {
+    display: none;
+  }
+
+  input:checked + label img[alt="Open"] {
+    display: none;
+  }
+
+  input:checked + label img[alt="Close"] {
+    display: block;
+  }
+
+  div:has(input:checked) ~ ul {
+    display: block;
+  }
+
+  ul {
+    min-height: 100vh;
+    color: var(--color-light-gray);
+    background-color: var(--color-darker-violet);
+    font-family: var(--font-body);
+    font-weight: var(--font-weight-bold);
+    text-transform: uppercase;
+    background-image: url("../assets/images/bg-pattern-mobile-nav.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: left 0% bottom 12%;
+  }
+
+  ul > li {
+    text-align: center;
+    font-size: 1.25rem;
+    letter-spacing: 1.5px;
+  }
+
+  ul > li:first-child {
+    padding-top: 3rem;
+  }
+
+  ul > li:not(:first-child) {
+    margin-top: 2.5rem;
+  }
+</style>
