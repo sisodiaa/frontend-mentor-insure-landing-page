@@ -1,7 +1,100 @@
-Humanizing your insurance.
+---
+import introMobile from "../assets/images/image-intro-mobile.jpg";
+---
 
-Get your life insurance coverage easier and faster. We blend our expertise 
-and technology to help you find the plan that’s right for you. Ensure you 
-and your loved ones are protected.
+<section>
+  <picture>
+    <img src={introMobile.src} alt="A happy insured family" />
+  </picture>
 
-View plans
+  <div>
+    <div class="container">
+      <h1>Humanizing your insurance.</h1>
+
+      <p>
+        Get your life insurance coverage easier and faster. We blend our
+        expertise and technology to help you find the plan that’s right for you.
+        Ensure you and your loved ones are protected.
+      </p>
+
+      <a href="#">View plans</a>
+    </div>
+  </div>
+
+  <div>
+    <hr />
+  </div>
+</section>
+
+<style>
+  section {
+    position: relative;
+  }
+
+  section::after {
+    position: absolute;
+    content: "";
+    bottom: 0;
+    width: 100%;
+    height: 330px;
+    background-image: url("../assets/images/bg-pattern-intro-right-mobile.svg");
+    background-repeat: no-repeat;
+    background-position: right 0% bottom 0%;
+  }
+
+  section > div:first-of-type {
+    position: relative;
+    padding-top: 6rem;
+    padding-bottom: 5rem;
+    color: var(--color-light-gray);
+    background-color: var(--color-dark-violet);
+    text-align: center;
+  }
+
+  section > div:first-of-type::before {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 165px;
+    background-image: url("../assets/images/bg-pattern-intro-left-mobile.svg");
+    background-repeat: no-repeat;
+  }
+
+  section > div:last-of-type {
+    background-color: var(--color-light-gray);
+    padding-top: 8rem;
+    padding-bottom: 3rem;
+  }
+
+  h1 {
+    position: relative;
+    margin-bottom: 1rem;
+    font-weight: var(--font-weight-regular);
+    z-index: 10;
+  }
+
+  p {
+    margin-bottom: 2rem;
+    line-height: 1.5;
+    letter-spacing: 0.25px;
+  }
+
+  a {
+    width: fit-content;
+    margin: 0 auto;
+    padding: 0.5rem 1.5rem;
+    color: var(--color-light-gray);
+    text-transform: uppercase;
+    border: 1px solid var(--color-light-gray);
+    letter-spacing: 0.5px;
+  }
+
+  hr {
+    width: 40%;
+    margin: 0 auto;
+    border: 0;
+    border-top: 1px solid var(--color-dark-violet);
+  }
+</style>

@@ -30,6 +30,7 @@ html {
 
 body {
   font-size: var(--font-size);
+  font-family: var(--font-body);
 }
 
 a {
@@ -44,6 +45,12 @@ img {
 
 ul {
   list-style: none;
+}
+
+h1 {
+  font-family: var(--font-headings);
+  font-size: 2.925rem;
+  line-height: 1;
 }
 
 .container {
