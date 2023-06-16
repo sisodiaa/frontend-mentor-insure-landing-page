@@ -1,0 +1,44 @@
+---
+import type { CollectionEntry } from "astro:content";
+
+type Props = CollectionEntry<"usp">;
+
+const {
+  data: { icon, title },
+  render,
+} = Astro.props;
+const { Content } = await render();
+---
+
+<li>
+  <img src={icon.src} alt={title} />
+  <h2>{title}</h2>
+  <div>
+    <Content />
+  </div>
+</li>
+
+<style></style>
+
+<style>
+  li:not(:last-of-type) {
+    margin-bottom: 4rem;
+  }
+
+  h2 {
+    margin-bottom: 1rem;
+    text-align: center;
+    font-weight: var(--font-weight-regular);
+  }
+
+  img {
+    width: 25%;
+    margin: 0 auto 2rem;
+  }
+
+  div {
+    text-align: center;
+    line-height: 1.5;
+    color: var(--color-grayish-violet);
+  }
+</style>

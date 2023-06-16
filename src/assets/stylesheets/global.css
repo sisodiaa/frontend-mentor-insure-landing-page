@@ -47,10 +47,18 @@ ul {
   list-style: none;
 }
 
-h1 {
+h1,
+h2 {
   font-family: var(--font-headings);
+}
+
+h1 {
   font-size: 2.925rem;
   line-height: 1;
+}
+
+h2 {
+  font-size: 1.75rem;
 }
 
 .container {
