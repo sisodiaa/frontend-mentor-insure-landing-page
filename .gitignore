@@ -18,3 +18,4 @@
 *.swo
 
 node_modules/
+.astro/
