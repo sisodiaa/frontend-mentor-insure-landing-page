@@ -48,7 +48,8 @@ ul {
 }
 
 h1,
-h2 {
+h2,
+h3 {
   font-family: var(--font-headings);
 }
 
@@ -58,6 +59,10 @@ h1 {
 }
 
 h2 {
+  font-size: 2.5rem;
+}
+
+h3 {
   font-size: 1.75rem;
 }
 
