@@ -1,4 +1,5 @@
 ---
+import Button from "./Button.astro"
 import introMobile from "../assets/images/image-intro-mobile.jpg";
 ---
 
@@ -17,7 +18,7 @@ import introMobile from "../assets/images/image-intro-mobile.jpg";
         Ensure you and your loved ones are protected.
       </p>
 
-      <a href="#">View plans</a>
+      <Button>View plans</Button>
     </div>
   </div>
 
@@ -78,16 +79,6 @@ import introMobile from "../assets/images/image-intro-mobile.jpg";
     margin-bottom: 2rem;
     line-height: 1.5;
     letter-spacing: 0.25px;
-  }
-
-  a {
-    width: fit-content;
-    margin: 0 auto;
-    padding: 0.5rem 1.5rem;
-    color: var(--color-light-gray);
-    text-transform: uppercase;
-    border: 1px solid var(--color-light-gray);
-    letter-spacing: 0.5px;
   }
 
   hr {
