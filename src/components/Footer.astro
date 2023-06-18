@@ -1,25 +1,128 @@
-Our company
+---
+import logo from "../assets/images/logo.svg";
+import iconFacebook from "../assets/images/icon-facebook.svg";
+import iconTwitter from "../assets/images/icon-twitter.svg";
+import iconPinterest from "../assets/images/icon-pinterest.svg";
+import iconInstagram from "../assets/images/icon-instagram.svg";
+---
 
-How we work
-Why Insure?
-View plans
-Reviews
+<footer>
+  <div class="container">
+    <div>
+      <img src={logo.src} alt="Brand Logo" />
+      <ul>
+        <li><img src={iconFacebook.src} alt="Facebook Icon" /></li>
+        <li><img src={iconTwitter.src} alt="Twitter Icon" /></li>
+        <li><img src={iconPinterest.src} alt="Pinterest Icon" /></li>
+        <li><img src={iconInstagram.src} alt="Instagram Icon" /></li>
+      </ul>
+    </div>
 
-Help me
+    <ul>
+      <li>
+        <h4>Our company</h4>
+        <ul>
+          <li>How we work</li>
+          <li>Why Insure?</li>
+          <li>View plans</li>
+          <li>Reviews</li>
+        </ul>
+      </li>
 
-FAQ
-Terms of use
-Privacy policy
-Cookies
+      <li>
+        <h4>Help me</h4>
+        <ul>
+          <li>FAQ</li>
+          <li>Terms of use</li>
+          <li>Privacy policy</li>
+          <li>Cookies</li>
+        </ul>
+      </li>
 
-Contact
+      <li>
+        <h4>Contact</h4>
+        <ul>
+          <li>Sales</li>
+          <li>Support</li>
+          <li>Live Chat</li>
+        </ul>
+      </li>
 
-Sales
-Support
-Live chat
+      <li>
+        <h4>Others</h4>
+        <ul>
+          <li>Careers</li>
+          <li>Press</li>
+          <li>Licenses</li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</footer>
 
-Others
+<style>
+  footer {
+    position: relative;
+    padding-top: 5.5rem;
+    padding-bottom: 5.5rem;
+    background-color: var(--color-light-gray);
+  }
 
-Careers
-Press
-Licenses
+  footer::before {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 173px;
+    top: 0;
+    left: 0;
+    background-image: url("../assets/images/bg-pattern-footer-mobile.svg");
+  }
+
+  footer > div > div {
+    position: relative;
+    margin-bottom: 4rem;
+    z-index: 20;
+  }
+
+  footer > div > div > img {
+    width: 30%;
+    margin-inline: auto;
+    margin-bottom: 2rem;
+  }
+
+  footer > div > div > ul {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 1rem;
+  }
+
+  footer > div > div > ul::after {
+    position: absolute;
+    content: "";
+    width: 100%;
+    margin-inline: auto;
+    height: 1px;
+    background-color: hsl(0, 0%, 60%);
+    bottom: -2rem;
+  }
+
+  footer > div > ul {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 0.875rem;
+  }
+
+  footer > div > ul > * + * {
+    margin-top: 2rem;
+  }
+
+  footer > div > ul > li {
+    font-weight: var(--font-weight-bold);
+  }
+
+  footer > div > ul > li > ul > * + * {
+    margin-top: 0.75rem;
+  }
+</style>
