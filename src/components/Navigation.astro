@@ -4,12 +4,12 @@ import close from "../assets/images/icon-close.svg";
 import hamburger from "../assets/images/icon-hamburger.svg";
 ---
 
-<nav>
-  <div class="container">
-    <figure>
-      <img src={logo.src} alt="Brand Logo" />
-    </figure>
+<nav class="container">
+  <figure>
+    <img src={logo.src} alt="Brand Logo" />
+  </figure>
 
+  <div>
     <input type="checkbox" id="menuToggle" />
     <label for="menuToggle">
       <figure>
@@ -19,9 +19,7 @@ import hamburger from "../assets/images/icon-hamburger.svg";
         <img src={hamburger.src} alt="Open" />
       </figure>
     </label>
-  </div>
 
-  <div>
     <ul>
       <li>How we work</li>
       <li>Blog</li>
@@ -32,12 +30,14 @@ import hamburger from "../assets/images/icon-hamburger.svg";
 </nav>
 
 <style>
-  div:first-of-type {
+  nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-top: 1.5rem;
-    padding-bottom: 1.5rem;
+    height: 5rem;
+  }
+
+  div {
   }
 
   input,
@@ -46,8 +46,10 @@ import hamburger from "../assets/images/icon-hamburger.svg";
     display: none;
   }
 
-  div:last-of-type {
-    position: relative;
+  @media only screen and (min-width: 768px) {
+    label {
+      display: none;
+    }
   }
 
   input:checked + label img[alt="Open"] {
@@ -58,13 +60,13 @@ import hamburger from "../assets/images/icon-hamburger.svg";
     display: block;
   }
 
-  div:first-of-type:has(input:checked) ~ div:last-of-type > ul {
+  input:checked ~ ul {
     display: block;
   }
 
   ul {
     position: absolute;
-    top: 0;
+    top: 5rem;
     left: 0;
     width: 100%;
     min-height: 92vh;
@@ -80,6 +82,19 @@ import hamburger from "../assets/images/icon-hamburger.svg";
     z-index: 20;
   }
 
+  @media only screen and (min-width: 768px) {
+    ul {
+      display: flex;
+      position: relative;
+      background-color: inherit;
+      background-image: none;
+      min-height: auto;
+      color: var(--color-darker-violet);
+      top: 0;
+      gap: 2rem;
+    }
+  }
+
   ul > li {
     text-align: center;
     font-size: 1.25rem;
@@ -92,5 +107,19 @@ import hamburger from "../assets/images/icon-hamburger.svg";
 
   ul > li:not(:first-child) {
     margin-top: 2.5rem;
+  }
+
+  @media only screen and (min-width: 768px) {
+    ul > li {
+      font-size: 1rem;
+    }
+
+    ul > li:first-child {
+      padding-top: 0;
+    }
+
+    ul > li:not(:first-child) {
+      margin-top: 0;
+    }
   }
 </style>
