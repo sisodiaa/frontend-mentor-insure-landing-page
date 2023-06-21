@@ -1,10 +1,12 @@
 ---
-import Button from "./Button.astro"
+import Button from "./Button.astro";
 import introMobile from "../assets/images/image-intro-mobile.jpg";
+import introDesktop from "../assets/images/image-intro-desktop.jpg";
 ---
 
 <section>
   <picture>
+    <source media="(min-width: 425px)" srcset={introDesktop.src} />
     <img src={introMobile.src} alt="A happy insured family" />
   </picture>
 
@@ -30,6 +32,7 @@ import introMobile from "../assets/images/image-intro-mobile.jpg";
 <style>
   section {
     position: relative;
+    background-color: var(--color-dark-violet);
   }
 
   section::after {
@@ -48,7 +51,6 @@ import introMobile from "../assets/images/image-intro-mobile.jpg";
     padding-top: 6rem;
     padding-bottom: 5rem;
     color: var(--color-light-gray);
-    background-color: var(--color-dark-violet);
     text-align: center;
   }
 
@@ -66,6 +68,7 @@ import introMobile from "../assets/images/image-intro-mobile.jpg";
   section > div:last-of-type {
     padding-top: 8rem;
     padding-bottom: 3rem;
+    background-color: white;
   }
 
   h1 {
@@ -86,5 +89,101 @@ import introMobile from "../assets/images/image-intro-mobile.jpg";
     margin: 0 auto;
     border: 0;
     border-top: 1px solid var(--color-dark-violet);
+  }
+
+  @media only screen and (min-width: 768px) {
+    section {
+      display: grid;
+      grid-template-rows: 5rem auto 5rem 5rem;
+      grid-template-columns: 6.25% 1fr 1fr 6.25%;
+    }
+
+    section::after {
+      background-image: none;
+    }
+
+    section > div:first-of-type {
+      text-align: left;
+      grid-column-start: 2;
+      grid-column-end: 3;
+      grid-row-start: 2;
+      grid-row-end: 3;
+      padding-top: 0rem;
+      padding-bottom: 2rem;
+    }
+
+    section > div:first-of-type > div {
+      margin: 0;
+    }
+
+    section > div:first-of-type::before {
+      background-image: none;
+    }
+
+    section > div:last-of-type {
+      background-color: white;
+      grid-row-start: 3;
+      grid-row-end: 4;
+      grid-column-start: 1;
+      grid-column-end: 5;
+    }
+
+    picture {
+      display: inline;
+      grid-column-start: 3;
+      grid-column-end: 4;
+      grid-row-start: 2;
+      grid-row-end: 4;
+      z-index: 10;
+    }
+
+    hr {
+      width: 12.5rem;
+      margin: 0;
+      margin-left: 6.25%;
+    }
+  }
+
+  @media only screen and (min-width: 944px) {
+    section::before {
+      position: absolute;
+      content: "";
+      right: 0;
+      top: 0;
+      background-image: url("../assets/images/bg-pattern-intro-right-desktop.svg");
+      background-size: contain;
+      width: 436px;
+      height: 593px;
+    }
+
+    section > div:first-of-type {
+      padding-top: 4rem;
+    }
+
+    section > div:first-of-type::before {
+      content: "";
+      top: 0;
+      left: 0;
+      width: 12.5rem;
+      height: 2px;
+      background-color: var(--color-light-gray);
+    }
+  }
+
+  @media only screen and (min-width: 1100px) {
+    section {
+      grid-template-columns: 1fr 30rem 30rem 1fr;
+    }
+
+    section::after {
+      background-image: url("../assets/images/bg-pattern-intro-left-desktop.svg");
+      background-size: contain;
+      width: 195px;
+      height: 504px;
+    }
+
+    hr {
+      margin-left: calc((100% - 60rem) / 2);
+    }
   }
 </style>
