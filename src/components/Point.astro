@@ -41,4 +41,23 @@ const { Content } = await render();
     line-height: 1.5;
     color: var(--color-grayish-violet);
   }
+
+  @media only screen and (min-width: 768px) {
+    h3 {
+      text-align: left;
+    }
+
+    div {
+      text-align: left;
+    }
+
+    img {
+      width: 86px;
+      height: 86px;
+    }
+
+    li:not(:last-of-type) {
+      margin-bottom: 0rem;
+    }
+  }
 </style>
