@@ -1,5 +1,5 @@
 ---
-import Button from "./Button.astro"
+import Button from "./Button.astro";
 ---
 
 <section class="container">
@@ -40,5 +40,31 @@ import Button from "./Button.astro"
     line-height: 1;
     margin-bottom: 3rem;
     z-index: 10;
+  }
+
+  @media only screen and (min-width: 768px) {
+    div {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-inline: 4rem;
+    }
+
+    div::after {
+      background-image: none;
+    }
+
+    h2 {
+      text-align: left;
+      margin-bottom: 0rem;
+      width: 65%;
+    }
+  }
+
+  @media only screen and (min-width: 1100px) {
+    div {
+      margin-left: calc((100% - 60rem) / 2);
+      margin-right: calc((100% - 60rem) / 2);
+    }
   }
 </style>
